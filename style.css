@@ -1571,19 +1571,26 @@ br.mobile-break {
 }
 
 
-/* ポートフォリオ用：ロゴ画像をテキストのワードマークに置換 */
-.logo-text{
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  letter-spacing: 0.06em;
-  color: var(--color-white);
-  white-space: nowrap;
-  line-height: 1;
+/* ポートフォリオ用：ロゴは「画像プレースホルダ」風のボックスで表現 */
+.logo-placeholder{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 44px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-2);
+  background:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 5px, transparent 5px, transparent 11px),
+    var(--color-surface);
 }
+@media (max-width: 767px){ .logo-placeholder{ width: 118px; height: 38px; font-size: 0.72rem; letter-spacing: 0.12em; } }
 .footer-logo-text{
   font-family: var(--font-display);
   font-size: 1.05rem;
   letter-spacing: 0.06em;
   color: var(--color-text);
 }
-@media (max-width: 767px){ .logo-text{ font-size: 1.05rem; } }
