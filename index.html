@@ -3,30 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sound Repair Studio | ギター・ベース リペア＆カスタマイズ</title>
-  <meta name="description" content="Sound Repair Studioは、ギター・ベースプレイヤーのためのプロフェッショナルなリペア・カスタマイズサービスです。あなたの楽器を最高の状態へ。">
+  <title>Sound Repair Studio | ○○駅北口徒歩15分のギターリペア・ベースリペア＆カスタマイズ</title>
+  <meta name="description" content="Sound Repair Studioは、○○駅北口から徒歩15分（東京都○○区）のギターリペア・ベースリペアとカスタマイズの工房です。弦高・ネック調整やフレット擦り合わせから、施工後のメンテナンスのご相談まで。あなたの楽器を最高の状態へ。">
 
   <!-- OGP -->
-  <meta property="og:title" content="Sound Repair Studio | ギター・ベース リペア＆カスタマイズ">
-  <meta property="og:description" content="ギター・ベースプレイヤーのためのプロフェッショナルなリペア・カスタマイズサービス。あなたの楽器を最高の状態へ。">
+  <meta property="og:title" content="Sound Repair Studio | ○○駅北口徒歩15分のギターリペア・ベースリペア＆カスタマイズ">
+  <meta property="og:description" content="○○駅北口から徒歩15分。ギター・ベースプレイヤーのためのプロフェッショナルなリペア・カスタマイズ工房です。あなたの楽器を最高の状態へ。">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sound Repair Studio | ギター・ベース リペア＆カスタマイズ">
-  <meta name="twitter:description" content="ギター・ベースプレイヤーのためのプロフェッショナルなリペア・カスタマイズサービス。">
+  <meta name="twitter:title" content="Sound Repair Studio | ○○駅北口徒歩15分のギターリペア・ベースリペア＆カスタマイズ">
+  <meta name="twitter:description" content="○○駅北口から徒歩15分。ギター・ベースプレイヤーのためのプロフェッショナルなリペア・カスタマイズ工房です。">
 
+  <!-- 構造化データ。中身は本文（事業者情報・リペアメニュー）に書いてあることだけにしておく。
+       ポートフォリオ版なので電話・住所・地域名はダミー、SNS（sameAs）は載せていない -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://im-tanakatv5.github.io/portfolio-1-repair-studio/#business",
+    "name": "Sound Repair Studio",
+    "description": "○○駅北口から徒歩15分にある、ギタリスト・ベーシストのためのプレミアムリペア＆カスタマイズ工房です。",
+    "url": "https://im-tanakatv5.github.io/portfolio-1-repair-studio/",
+    "image": [
+      "https://im-tanakatv5.github.io/portfolio-1-repair-studio/image/hero-guitar-repair-workbench-1706.webp"
+    ],
+    "telephone": "000-0000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "000-0000",
+      "addressRegion": "東京都",
+      "addressLocality": "○○区",
+      "addressCountry": "JP"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "20:00",
+        "description": "要予約制・不定休"
+      }
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "○○区" },
+      { "@type": "City", "name": "△△区" },
+      { "@type": "City", "name": "□□区" },
+      { "@type": "City", "name": "××市" }
+    ],
+    "knowsAbout": [
+      "ギター・ベースのリペア",
+      "ギター・ベースのカスタマイズ",
+      "セットアップ",
+      "楽器購入相談",
+      "スタジオレンタル",
+      "中古楽器委託販売",
+      "防音室委託販売"
+    ],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "弦高調整 / ネック調整" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "オクターブ調整" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "フレット擦り合わせ" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ナット調整" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ピックアップ交換" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "配線改造・コンデンサ交換" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ペグ交換" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "電気系統リペア" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ノイズ対策・シールド処理" } }
+    ]
+  }
+  </script>
 
 
   <!-- ヒーロー背景の静止画。最初に目に入るLCP要素なので先読みしておく -->
-  <link rel="preload" href="image/hero.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="image/hero-guitar-repair-workbench-1706.webp" as="image" type="image/webp" imagesrcset="image/hero-guitar-repair-workbench-800.webp 800w, image/hero-guitar-repair-workbench-1280.webp 1280w, image/hero-guitar-repair-workbench-1706.webp 1706w" imagesizes="(min-aspect-ratio: 16/9) 100vw, 178vh" fetchpriority="high">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=938e9896">
 </head>
 <body>
 
@@ -47,6 +105,23 @@
           <li><a href="#service" class="nav-link">SERVICE</a></li>
           <li><a href="#reserve" class="nav-link nav-link--cta">RESERVATION</a></li>
         </ul>
+        <!-- スマホのメニューを開いたときだけ出る。デモなのでリンク先は無し（ページ下の #sns と #line も同じ） -->
+        <ul class="nav-sns" aria-label="SNS">
+          <li class="nav-sns-item">
+            <a href="#" class="nav-sns-link" data-demo-link aria-disabled="true" aria-label="X（旧Twitter）（デモのためリンク先はありません）">
+              <span class="nav-sns-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 1200 1227" fill="currentColor" aria-hidden="true" focusable="false"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.163 519.284ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.828Z"/></svg>
+              </span>
+            </a>
+          </li>
+          <li class="nav-sns-item">
+            <a href="#" class="nav-sns-link" data-demo-link aria-disabled="true" aria-label="LINE公式アカウント（デモのためリンク先はありません）">
+              <span class="nav-sns-icon nav-sns-icon--line" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false"><rect width="1000" height="1000" rx="225" fill="#06C755"/><path fill="#fff" fill-rule="evenodd" d="M440 714C468 718 478 732 474 758L466 798C463 818 478 822 500 810C610 750 765 645 804 560A333 268 0 1 0 440 714ZM276 380H313V502H383V540H276ZM402 380H440V540H402ZM461 380H495L563 471V380H601V540H563V533L499 447V540H461ZM622 380H730V418H660V441H728V479H660V502H730V540H622Z"/></svg>
+              </span>
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -58,8 +133,12 @@
 
         <!-- 今は静止画（リペア工房の作業台）を背景に敷いている。ページ最上部＝LCP要素なので head で先読み済み -->
         <img
-          src="image/hero.jpg"
-          alt=""
+          src="image/hero-guitar-repair-workbench-1706.webp"
+          srcset="image/hero-guitar-repair-workbench-800.webp 800w, image/hero-guitar-repair-workbench-1280.webp 1280w, image/hero-guitar-repair-workbench-1706.webp 1706w"
+          sizes="(min-aspect-ratio: 16/9) 100vw, 178vh"
+          width="1706"
+          height="960"
+          alt="Sound Repair Studioのリペア工房。作業台に置かれたエレキギターと、壁に並ぶリペア用の工具"
           class="hero-image"
           fetchpriority="high"
           decoding="async"
@@ -86,7 +165,7 @@
           <p class="hero-brand-name">portfolio</p>
         </div>
         <h1 class="hero-title">あなたの楽器を<br>最高の状態へ。</h1>
-        <p class="hero-sub">プロフェッショナルな<br class="mobile-break">リペア・カスタマイズで<br>あなたのサウンドを進化させます。</p>
+        <p class="hero-sub">○○駅北口から徒歩15分の工房。<br>プロフェッショナルな<br class="mobile-break">リペア・カスタマイズで<br>あなたのサウンドを進化させます。</p>
         <div class="hero-actions">
           <a href="#reserve" class="btn btn-primary">予約する</a>
           <a href="#service" class="btn btn-ghost">サービス一覧</a>
@@ -104,6 +183,7 @@
         <div class="about-message">
           <p class="about-lead">すべての<br class="mobile-break">ギター・ベースプレイヤーへ</p>
           <p>Sound Repair Studioは、<br>ギタリスト・ベーシストのための<br class="mobile-break">プレミアムリペア＆<br class="mobile-break">カスタマイズ工房です。<br>代表は大手楽器店で<br class="mobile-break">長期に渡り様々な楽器販売や、<br>楽器修理・セットアップを<br class="mobile-break">行ってきました。</p>
+          <p>工房は○○駅北口から徒歩15分、<br class="mobile-break">東京都○○区にございます。<br>○○区・△△区・<br class="mobile-break">□□区・××市など、<br>近隣エリアからの<br class="mobile-break">ギターリペア・ベースリペアの<br class="mobile-break">ご依頼も承っております。</p>
           <p>はっきり申し上げて、<br>新品のギターだから手入れせず<br class="mobile-break">問題無いだろうというお考えは<br>必ずしもそうとは限りません。</p>
           <p>なぜならば、<br class="mobile-break">大量生産されているギターというのは<br>初期不良として見られがちの<br class="mobile-break">音詰まりなどを出来る限り無くす為、<br>工場で弦高は2.0mmなどと<br class="mobile-break">指定がされている事が多々ございます。</p>
           <p>勿論ビジネスとして<br class="mobile-break">間違いではありません。<br>ですが、楽器を購入し<br class="mobile-break">挫折せず続ける事が出来る方というのは<br>極少数になっている事実に対し、<br>私の結論として、そもそも<br class="mobile-break">楽器が持ち主にとってベストな状態に<br class="mobile-break">なっていない事があるということを<br>数多くのお客様対応で<br class="mobile-break">実感してきました。</p>
@@ -154,7 +234,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">SERVICE</span>
-          <h2 id="service-heading" class="section-title">サービス紹介</h2>
+          <h2 id="service-heading" class="section-title">ギター・ベースの<br>リペア＆サービス紹介</h2>
           <p class="section-desc">Sound Repair Studioでは<br class="mobile-break">様々な【音】に関わる内容に対し、<br class="mobile-break">ベストな提案・サービスを<br class="mobile-break">行う事業を行っております。</p>
         </div>
 
@@ -165,14 +245,17 @@
           <button type="button" class="service-tab" role="tab" id="tab-purchase" aria-selected="false" aria-controls="panel-purchase" tabindex="-1">
             <span class="service-tab-num" aria-hidden="true">02</span><span class="service-tab-label">楽器購入相談事業</span>
           </button>
+          <button type="button" class="service-tab" role="tab" id="tab-studio" aria-selected="false" aria-controls="panel-studio" tabindex="-1">
+            <span class="service-tab-num" aria-hidden="true">03</span><span class="service-tab-label">スタジオレンタル</span>
+          </button>
           <button type="button" class="service-tab" role="tab" id="tab-consignment" aria-selected="false" aria-controls="panel-consignment" tabindex="-1">
-            <span class="service-tab-num" aria-hidden="true">03</span><span class="service-tab-label">中古楽器委託販売事業</span>
+            <span class="service-tab-num" aria-hidden="true">04</span><span class="service-tab-label">中古楽器委託販売事業</span>
           </button>
           <button type="button" class="service-tab" role="tab" id="tab-soundproof" aria-selected="false" aria-controls="panel-soundproof" tabindex="-1">
-            <span class="service-tab-num" aria-hidden="true">04</span><span class="service-tab-label">防音室委託販売事業</span>
+            <span class="service-tab-num" aria-hidden="true">05</span><span class="service-tab-label">防音室委託販売事業</span>
           </button>
           <button type="button" class="service-tab" role="tab" id="tab-events" aria-selected="false" aria-controls="panel-events" tabindex="-1">
-            <span class="service-tab-num" aria-hidden="true">05</span><span class="service-tab-label">イベント事業</span>
+            <span class="service-tab-num" aria-hidden="true">06</span><span class="service-tab-label">イベント事業</span>
           </button>
         </div>
 
@@ -218,7 +301,7 @@
             <li class="service-item">
               <div class="service-item-inner">
                 <h4 class="service-item-name">ピックアップ交換</h4>
-                <p class="service-item-desc">サウンドキャラクターを<br class="mobile-break">根本から変える、<br class="mobile-break">最もインパクトの<br class="mobile-break">大きいカスタマイズ。<br class="mobile-break">理想の音色を追求し、<br class="mobile-break">ピックアップ選定の<br class="mobile-break">ご相談も承ります。</p>
+                <p class="service-item-desc">サウンドキャラクターを<br class="pickup-narrow-break">根本から変える、<br class="mobile-break">最もインパクトの大きいカスタマイズ。<br class="mobile-break">理想の音色を追求し、<br class="mobile-break">ピックアップ選定のご相談も承ります。</p>
               </div>
             </li>
             <li class="service-item">
@@ -269,10 +352,136 @@
 
         </div>
 
+        <div class="service-panel" id="panel-studio" role="tabpanel" aria-labelledby="tab-studio" tabindex="0" hidden>
+        <div class="service-block" id="studio">
+          <div class="service-block-header">
+            <span class="service-number" aria-hidden="true">03</span>
+            <div>
+              <h3 class="service-block-title">スタジオレンタル</h3>
+              <p class="service-block-sub">Studio Rental</p>
+            </div>
+          </div>
+          <div class="service-block-body">
+            <p>○○ダンススクール・<br class="mobile-break">Sound Repair Studioが<br class="mobile-break">運営しているレンタルスタジオです。<br>場所は工房と同じ、<br class="mobile-break">○○駅北口から徒歩15分<br class="mobile-break">（東京都○○区）です。</p>
+            <p>フラダンスの個人練習・団体練習や、<br>ほかのダンス練習などでの<br class="mobile-break">ご利用が可能です。</p>
+            <p>直近では<br class="mobile-break">声優業をされている方々による<br>発声練習やセミナー・<br class="mobile-break">レコーディングなど、<br>幅広い分野で<br class="mobile-break">ご利用いただいております。</p>
+          </div>
+
+          <div class="studio-price">
+            <h4 class="studio-heading" id="studio-price-heading">料金<span class="studio-heading-note">ダンススタジオ／<br class="mobile-break">防音・レコーディングスタジオ共通</span></h4>
+            <table class="studio-price-table" aria-labelledby="studio-price-heading">
+              <thead>
+                <tr>
+                  <th scope="col">ご利用区分</th>
+                  <th scope="col">料金（税込）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">個人利用</th>
+                  <td><span class="studio-price-amount">1,000</span><span class="studio-price-yen">円</span><span class="studio-price-unit">／1時間</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">個人利用（2名）</th>
+                  <td><span class="studio-price-amount">2,000</span><span class="studio-price-yen">円</span><span class="studio-price-unit">／1時間</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">団体利用</th>
+                  <td><span class="studio-price-amount">3,500</span><span class="studio-price-yen">円</span><span class="studio-price-unit">／1時間</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">商業利用</th>
+                  <td><span class="studio-price-ask">要相談</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="studio-rooms">
+            <div class="studio-room">
+              <h4 class="studio-room-title">ダンススタジオ</h4>
+              <dl class="studio-room-hours">
+                <dt>利用可能時間</dt>
+                <dd>10時〜22時</dd>
+              </dl>
+              <h5 class="studio-room-label">スタジオ常設品</h5>
+              <ul class="studio-room-items">
+                <li>モニターテレビ</li>
+                <li>長机×2</li>
+                <li>椅子×10</li>
+                <li>譜面台</li>
+                <li>Bluetooth 受信機能付きスピーカー</li>
+              </ul>
+            </div>
+
+            <div class="studio-room">
+              <h4 class="studio-room-title">防音・レコーディングスタジオ</h4>
+              <dl class="studio-room-hours">
+                <dt>利用可能時間</dt>
+                <dd>10時〜22時</dd>
+              </dl>
+              <h5 class="studio-room-label">スタジオ常設品</h5>
+              <ul class="studio-room-items">
+                <li>モニターテレビ</li>
+                <li>作業用机</li>
+                <li>椅子</li>
+                <li>譜面台</li>
+              </ul>
+              <h5 class="studio-room-label" id="studio-gear-label">レコーディング機材</h5>
+              <table class="studio-gear" aria-labelledby="studio-gear-label">
+                <tbody>
+                  <tr>
+                    <th scope="row">オーディオ<br class="mobile-break">インターフェイス</th>
+                    <td>SSL 2 + mk2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">コンデンサー<br class="mobile-break">マイク</th>
+                    <td>Neumann TLM&nbsp;103 クローン</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ポップガード</th>
+                    <td>STEDMAN PROSCREEN PS101</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">リフレクション<br class="mobile-break">フィルター</th>
+                    <td>sE Electronics RF-X Reflexion Filter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="studio-note">※ それ以外の内容については<br class="mobile-break">原則ご自身で用意をお願い致します。</p>
+
+          <div class="studio-contact">
+            <h4 class="studio-heading">ご予約・お問い合わせ</h4>
+            <div class="studio-reserve">
+              <!-- 本番ではスタジオ専用の予約ページに飛ぶ。デモなのでリンク先は無し -->
+              <a href="#" class="btn btn-primary" data-demo-link aria-disabled="true">予約ページへ</a>
+            </div>
+            <p class="studio-contact-lead">不明点や事前確認などをされたい方は<br>お気軽に下記の連絡先より<br class="mobile-break">ご連絡くださいませ。</p>
+            <dl class="studio-contact-list">
+              <div class="studio-contact-row">
+                <dt class="studio-contact-term">電話番号</dt>
+                <dd class="studio-contact-desc"><a href="tel:0000000000" class="info-link">000-0000-0000</a></dd>
+              </div>
+              <div class="studio-contact-row">
+                <dt class="studio-contact-term">メールアドレス</dt>
+                <dd class="studio-contact-desc"><a href="mailto:info@example.com" class="info-link">info<wbr>@example.com</a></dd>
+              </div>
+              <div class="studio-contact-row">
+                <dt class="studio-contact-term">代表</dt>
+                <dd class="studio-contact-desc">山田 太郎（ヤマダ タロウ）<span class="studio-contact-sub">Sound Repair Studio 代表 /<br class="mobile-break"> ○○ダンススクール Web管理担当</span></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        </div>
+
         <div class="service-panel" id="panel-consignment" role="tabpanel" aria-labelledby="tab-consignment" tabindex="0" hidden>
         <div class="service-block" id="consignment">
           <div class="service-block-header">
-            <span class="service-number" aria-hidden="true">03</span>
+            <span class="service-number" aria-hidden="true">04</span>
             <div>
               <h3 class="service-block-title">中古楽器委託販売事業</h3>
               <p class="service-block-sub">Used Instrument Consignment</p>
@@ -296,7 +505,7 @@
         <div class="service-panel" id="panel-soundproof" role="tabpanel" aria-labelledby="tab-soundproof" tabindex="0" hidden>
         <div class="service-block" id="soundproof">
           <div class="service-block-header">
-            <span class="service-number" aria-hidden="true">04</span>
+            <span class="service-number" aria-hidden="true">05</span>
             <div>
               <h3 class="service-block-title">防音室委託販売事業</h3>
               <p class="service-block-sub">Soundproof Room Consignment</p>
@@ -315,7 +524,7 @@
         <div class="service-panel" id="panel-events" role="tabpanel" aria-labelledby="tab-events" tabindex="0" hidden>
         <div class="service-block" id="events">
           <div class="service-block-header">
-            <span class="service-number" aria-hidden="true">05</span>
+            <span class="service-number" aria-hidden="true">06</span>
             <div>
               <h3 class="service-block-title">イベント事業</h3>
               <p class="service-block-sub">Events</p>
@@ -348,37 +557,54 @@
         <div class="section-header">
           <span class="section-label">FLOW</span>
           <h2 id="flow-heading" class="section-title">ご依頼の流れ</h2>
+          <p class="section-desc">リペアのご依頼から<br class="mobile-break">お渡しまでの流れです。</p>
         </div>
         <ol class="flow-list" aria-label="依頼ステップ">
           <li class="flow-item">
             <div class="flow-step" aria-hidden="true">01</div>
             <div class="flow-content">
               <h3 class="flow-title">お問い合わせ・ご予約</h3>
-              <p class="flow-desc">下記の予約フォームから、楽器の状態やご希望の施工内容をお知らせください。</p>
+              <p class="flow-desc">下記の予約フォームから、<br class="mobile-break">楽器の状態や<br class="narrow-break">ご希望の施工内容を<br class="mobile-break">お知らせください。</p>
             </div>
           </li>
           <li class="flow-item">
             <div class="flow-step" aria-hidden="true">02</div>
             <div class="flow-content">
               <h3 class="flow-title">お預かり・診断</h3>
-              <p class="flow-desc">楽器をお預かりし、状態を詳しく診断。最適な施工プランをご提案します。</p>
+              <p class="flow-desc">楽器をお預かりし、<br class="narrow-break">各部の状態を<br class="mobile-break">細かくチェックして診断。<br class="mobile-break">最適な施工プランを<br class="narrow-break">ご提案します。</p>
             </div>
           </li>
           <li class="flow-item">
             <div class="flow-step" aria-hidden="true">03</div>
             <div class="flow-content">
               <h3 class="flow-title">施工</h3>
-              <p class="flow-desc">プロの技術で丁寧に施工。進捗は随時ご連絡します。</p>
+              <p class="flow-desc">プロの技術で丁寧に施工。<br class="mobile-break">進捗は随時ご連絡します。</p>
             </div>
           </li>
           <li class="flow-item">
             <div class="flow-step" aria-hidden="true">04</div>
             <div class="flow-content">
               <h3 class="flow-title">お渡し・アフターフォロー</h3>
-              <p class="flow-desc">施工完了後にお渡し。施工後のご不明点もお気軽にご相談ください。</p>
+              <p class="flow-desc">施工完了後にお渡し。<br class="mobile-break">施工後のご不明点や、<br>その後の<br class="narrow-break">メンテナンスについても<br class="mobile-break">お気軽にご相談ください。</p>
             </div>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- デモなのでリンク先は無し -->
+    <section class="line-oa section" id="line" aria-labelledby="line-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">LINE</span>
+          <h2 id="line-heading" class="section-title">Sound Repair Studioが<br>LINE公式アカウントに<br class="mobile-break">登場！</h2>
+        </div>
+        <div class="line-oa-body">
+          <img src="image/line-official-account-icon-240.png" alt="LINE公式アカウント" width="88" height="88" loading="lazy" decoding="async" class="line-oa-logo">
+          <p class="line-oa-desc">お得な情報を受け取るには、<br class="mobile-break">以下のリンクから<br class="mobile-break">友だち追加してください。</p>
+          <p class="line-oa-offer">LINE追加で工賃10%off...!!!</p>
+          <a href="#" class="btn btn-primary line-oa-link" data-demo-link aria-disabled="true" aria-label="追加はこちらから（デモのためリンク先はありません）">追加はこちらから</a>
+        </div>
       </div>
     </section>
 
@@ -386,7 +612,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">RESERVATION</span>
-          <h2 id="reserve-heading" class="section-title">予約フォーム</h2>
+          <h2 id="reserve-heading" class="section-title">リペア・ご相談の<br class="mobile-break">予約フォーム</h2>
           <p class="section-desc">以下のフォームにご記入の上、<br class="mobile-break">お送りください。<br class="mobile-break">2営業日以内にご連絡いたします。</p>
         </div>
 
@@ -411,6 +637,7 @@
 
           <div class="form-group">
             <label for="email" class="form-label">メールアドレス <span class="required" aria-label="必須">*</span></label>
+            <p id="email-hint" class="form-hint">※ご連絡のつくアドレスをご入力ください。</p>
             <input
               type="email"
               id="email"
@@ -420,9 +647,26 @@
               autocomplete="email"
               required
               aria-required="true"
-              aria-describedby="email-error"
+              aria-describedby="email-hint email-error"
             >
             <span id="email-error" class="form-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">電話番号 <span class="required" aria-label="必須">*</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input"
+              placeholder="090-1234-5678"
+              autocomplete="tel"
+              inputmode="tel"
+              required
+              aria-required="true"
+              aria-describedby="phone-error"
+            >
+            <span id="phone-error" class="form-error" role="alert" aria-live="polite"></span>
           </div>
 
           <div class="form-group">
@@ -480,6 +724,24 @@
             <span id="message-error" class="form-error" role="alert" aria-live="polite"></span>
           </div>
 
+          <div class="form-group">
+            <label for="referral" class="form-label">当工房を知ったきっかけ <span class="optional">任意</span></label>
+            <select
+              id="referral"
+              name="referral"
+              class="form-input form-select"
+            >
+              <option value="">選択してください</option>
+              <option value="インターネット検索">インターネット検索</option>
+              <option value="Googleマップ">Googleマップ</option>
+              <option value="SNS">SNS</option>
+              <option value="ご紹介（知人・友人など）">ご紹介（知人・友人など）</option>
+              <option value="その他">その他</option>
+            </select>
+            <!-- 任意なのでエラーは出さない。下の余白を他の項目と揃えるために枠だけ置いてる -->
+            <span class="form-error" aria-hidden="true"></span>
+          </div>
+
           <div class="form-group form-group--checkbox">
             <label class="checkbox-label">
               <input type="checkbox" id="privacy" name="privacy" class="checkbox-input" required aria-required="true" aria-describedby="privacy-error">
@@ -505,7 +767,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">INFORMATION</span>
-          <h2 id="business-info-heading" class="section-title">事業者情報</h2>
+          <h2 id="business-info-heading" class="section-title">事業者情報・<br class="mobile-break">○○駅からのアクセス</h2>
         </div>
         <dl class="info-list">
           <div class="info-row">
@@ -517,12 +779,16 @@
             <dd class="info-desc">〒000-0000<br class="mobile-break">東京都○○区（サンプル）</dd>
           </div>
           <div class="info-row">
+            <dt class="info-term">アクセス</dt>
+            <dd class="info-desc">○○駅北口から<br class="narrow-break">徒歩15分</dd>
+          </div>
+          <div class="info-row">
             <dt class="info-term">電話番号</dt>
             <dd class="info-desc"><a href="tel:0000000000" class="info-link">000-0000-0000</a></dd>
           </div>
           <div class="info-row">
             <dt class="info-term">営業時間</dt>
-            <dd class="info-desc">10:00〜22:00（要予約制）</dd>
+            <dd class="info-desc">11:00〜20:00（要予約制）</dd>
           </div>
           <div class="info-row">
             <dt class="info-term">定休日</dt>
@@ -534,9 +800,48 @@
           </div>
           <div class="info-row">
             <dt class="info-term">古物商許可</dt>
-            <dd class="info-desc">東京都公安委員会 第000000000000号 山田 太郎（交付：令和●年●月●日）</dd>
+            <dd class="info-desc">東京都公安委員会 <br class="mobile-break">第000000000000号 <br class="mobile-break">山田 太郎<br class="mobile-break">（交付：令和●年●月●日）</dd>
           </div>
         </dl>
+      </div>
+    </section>
+
+    <!-- li を足せば並ぶ。デモなのでリンク先は無し -->
+    <section class="sns section" id="sns" aria-labelledby="sns-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">SNS</span>
+          <h2 id="sns-heading" class="section-title">工房の<br class="mobile-break">公式SNSアカウント</h2>
+          <p class="section-desc">実際のリペアは<br class="mobile-break">公式SNSからもご覧いただけます。</p>
+        </div>
+        <ul class="sns-list">
+          <li class="sns-item">
+            <a href="#" class="sns-link" data-demo-link aria-disabled="true" aria-label="X（旧Twitter）（デモのためリンク先はありません）">
+              <span class="sns-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 1200 1227" fill="currentColor" aria-hidden="true" focusable="false"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.163 519.284ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.828Z"/></svg>
+              </span>
+              <span class="sns-text">
+                <span class="sns-name">X（旧Twitter）</span>
+              </span>
+              <span class="sns-arrow" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false"><path d="M4 10L10 4M5 4h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/></svg>
+              </span>
+            </a>
+          </li>
+          <li class="sns-item">
+            <a href="#" class="sns-link" data-demo-link aria-disabled="true" aria-label="LINE公式アカウント（デモのためリンク先はありません）">
+              <span class="sns-icon sns-icon--line" aria-hidden="true">
+                <svg width="36" height="36" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false"><rect width="1000" height="1000" rx="225" fill="#06C755"/><path fill="#fff" fill-rule="evenodd" d="M440 714C468 718 478 732 474 758L466 798C463 818 478 822 500 810C610 750 765 645 804 560A333 268 0 1 0 440 714ZM276 380H313V502H383V540H276ZM402 380H440V540H402ZM461 380H495L563 471V380H601V540H563V533L499 447V540H461ZM622 380H730V418H660V441H728V479H660V502H730V540H622Z"/></svg>
+              </span>
+              <span class="sns-text">
+                <span class="sns-name">LINE公式アカウント</span>
+              </span>
+              <span class="sns-arrow" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false"><path d="M4 10L10 4M5 4h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/></svg>
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -561,6 +866,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=13"></script>
+  <script src="script.js?v=197b40f4"></script>
 </body>
 </html>

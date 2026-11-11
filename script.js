@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initServiceTabs();
     initReservationForm();
     initCopyrightYear();
+    initDemoLinks();
   } catch (err) {
     // ここで拾って握りつぶす。JSが動かなくてもUI自体は崩れない作り
   }
@@ -40,6 +41,8 @@ function initHeader() {
   if (!header) return;
 
   const onScroll = () => {
+    // メニュー中は body を固定していて scrollY が0になる。そこで線の色が変わらないように
+    if (document.body.classList.contains('is-menu-open')) return;
     header.classList.toggle('scrolled', window.scrollY > 40);
   };
 
@@ -52,31 +55,106 @@ function initMobileNav() {
   const nav = document.getElementById('global-nav');
   if (!toggle || !nav) return;
 
-  toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-    toggle.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  const body = document.body;
+  const root = document.documentElement;
+  const logo = document.querySelector('.logo-link');
+  // 開いている間、メニューの下に隠れた本文へTabや読み上げで入れないようにする
+  const behind = [document.querySelector('main'), document.querySelector('.site-footer')].filter(Boolean);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const wide = window.matchMedia('(min-width: 768px)');
+  let savedY = 0;
+  let closeTimer = null;
+
+  // iOS Safari は body に overflow:hidden を付けても後ろがスクロールしてしまう。
+  // 開いた時点の位置で body ごと固定して、閉じたら同じ位置に戻す
+  function lockScroll() {
+    savedY = window.scrollY;
+    body.style.position = 'fixed';
+    body.style.top = `-${savedY}px`;
+    body.style.left = '0';
+    body.style.right = '0';
+    body.style.width = '100%';
+  }
+
+  function unlockScroll() {
+    body.style.position = '';
+    body.style.top = '';
+    body.style.left = '';
+    body.style.right = '';
+    body.style.width = '';
+    // html の smooth が効いたままだと、元の位置まで流れていくのが見えてしまう
+    const prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, savedY);
+    root.style.scrollBehavior = prev;
+  }
+
+  function endClosing() {
+    clearTimeout(closeTimer);
+    nav.classList.remove('is-closing');
+  }
+
+  function openNav() {
+    endClosing();
+    lockScroll();
+    behind.forEach(el => el.setAttribute('inert', ''));
+    body.classList.add('is-menu-open');
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'メニューを閉じる');
+  }
+
+  function closeNav(animate = true) {
+    if (!nav.classList.contains('is-open')) return;
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'メニューを開く');
+    behind.forEach(el => el.removeAttribute('inert'));
+    unlockScroll();
+    body.classList.remove('is-menu-open');
+
+    if (animate && !reduceMotion.matches) {
+      nav.classList.add('is-closing');
+      // animationend が来ない環境でも残らないように保険をかけておく
+      closeTimer = setTimeout(endClosing, 400);
+    }
+  }
+
+  nav.addEventListener('animationend', (e) => {
+    if (e.target === nav && nav.classList.contains('is-closing')) endClosing();
   });
 
-  nav.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'メニューを開く');
-      document.body.style.overflow = '';
-    });
+  toggle.addEventListener('click', () => {
+    if (nav.classList.contains('is-open')) closeNav();
+    else openNav();
   });
+
+  // リンクを押しても、項目の外の暗いところを押しても閉じる。
+  // リンクのときは閉じて元の位置に戻してから、そのままアンカーへスクロールしていく
+  nav.addEventListener('click', () => {
+    closeNav();
+  });
+
+  // ロゴはメニューの上に出ていて開いたままでも押せる。固定を外してからトップへ飛ばす
+  if (logo) {
+    logo.addEventListener('click', () => {
+      closeNav();
+    });
+  }
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav.classList.contains('is-open')) {
-      nav.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'メニューを開く');
-      document.body.style.overflow = '';
+      closeNav();
       toggle.focus();
     }
   });
+
+  // 開いたまま横向きにしてPC用のナビに切り替わったら、固定だけ残らないように閉じる
+  const onWide = (e) => {
+    if (e.matches) closeNav(false);
+  };
+  if (wide.addEventListener) wide.addEventListener('change', onWide);
+  else if (wide.addListener) wide.addListener(onWide);
 }
 
 function initScrollReveal() {
@@ -94,8 +172,14 @@ function initScrollReveal() {
     '.service-item',
     '.license-box',
     '.event-box',
+    '.studio-price',
+    '.studio-room',
+    '.studio-note',
+    '.studio-contact',
     '.flow-item',
     '.info-row',
+    '.sns-item',
+    '.line-oa-body > *',
     '.reserve-form'
   ].join(', '));
 
@@ -159,7 +243,7 @@ function initServiceTabs() {
 
   tabs.forEach((tab, i) => {
     // タップするとボタンにフォーカスが入り、iOSがそれを見せようとして縦にもスクロールしてしまう。
-    // タップ由来のフォーカスだけ抑える。キーボードのTab/矢印操作はこれに影響されない
+    // タップ由来のフォーカスだけ抑える。キーボードのTab/矢印操作は影響されない
     tab.addEventListener('mousedown', (e) => e.preventDefault());
 
     tab.addEventListener('click', () => activate(i, false));
@@ -191,6 +275,7 @@ function initReservationForm() {
   const FIELDS = [
     { id: 'name',         msg: 'お名前を入力してください。' },
     { id: 'email',        msg: 'メールアドレスを入力してください。', extra: validateEmail },
+    { id: 'phone',        msg: '電話番号を入力してください。', extra: validatePhone },
     { id: 'instrument',   msg: '楽器の種類を選択してください。' },
     { id: 'service-type', msg: 'サービスを選択してください。' },
     { id: 'message',      msg: '楽器の状態・ご要望を入力してください。' },
@@ -201,6 +286,14 @@ function initReservationForm() {
 
   function validateEmail(val) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) ? '' : '正しいメールアドレスを入力してください。';
+  }
+
+  // 書き方は人それぞれなので、数字・ハイフン・＋・空白・カッコなら通す（全角も可）。
+  // 桁は 090-xxxx-xxxx の11桁や +81 付きまで入るくらいのゆるさで見るだけ
+  function validatePhone(val) {
+    if (!/^[0-9０-９+＋\-－ー‐−\s()（）]+$/.test(val)) return '電話番号は数字とハイフンで入力してください。';
+    const digits = val.replace(/[^0-9０-９]/g, '').length;
+    return digits >= 10 && digits <= 15 ? '' : '正しい電話番号を入力してください。';
   }
 
   function setFieldError(id, message) {
@@ -291,4 +384,11 @@ function initReservationForm() {
 function initCopyrightYear() {
   const el = document.getElementById('copyright-year');
   if (el) el.textContent = String(new Date().getFullYear());
+}
+
+// デモなのでSNS・予約ページのリンクは押しても飛ばない（# でトップに戻るのも止める）
+function initDemoLinks() {
+  document.querySelectorAll('[data-demo-link]').forEach(a => {
+    a.addEventListener('click', (e) => e.preventDefault());
+  });
 }
